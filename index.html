@@ -21,49 +21,50 @@
     
     <style>
       body {
-      margin: 0;
-      background-color: black;
-      filter: saturate(1.35);
+        margin: 0;
+        background-color: black;
+        filter: saturate(1.35);
+        overflow: hidden;
       }
       canvas {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.6;
-      min-height: fill;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        min-height: fill;
       }
       div#center-content {
-      display: grid;
-      min-height: 100vh;
+        display: grid;
+        min-height: 100vh;
       }
       div.content-container {
-      place-self: center;
-      color: #e60000;
-      outline: 15px solid #000c;
-      border-radius: 2px;
-      background-color: #000e;
-      z-index: 1;
-      box-shadow: 0px 0px 2px 25px #260000dd;
-      cursor: context-menu;
-      transition: 400ms;
+        place-self: center;
+        color: #e60000;
+        outline: 15px solid #000c;
+        border-radius: 2px;
+        background-color: #000e;
+        z-index: 1;
+        box-shadow: 0px 0px 2px 25px #260000dd;
+        cursor: context-menu;
+        transition: 400ms;
       }
       div h1.content {
-      place-self: center;
-      color: #e60000;
-      z-index: 2;
-      font-family: Orbitron;
-      text-shadow: 0 0 5px darkred;
-      font-size: 40px;
+        place-self: center;
+        color: #e60000;
+        z-index: 2;
+        font-family: Orbitron;
+        text-shadow: 0 0 5px darkred;
+        font-size: 40px;
       }
       div > div:hover {
-      filter: brightness(1.7);
+        filter: brightness(1.7);
       }
       .orbitron-black {
-      font-family: "Orbitron", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 900;
-      font-style: normal;
+        font-family: "Orbitron", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
       }
     </style>
     <script>
@@ -82,7 +83,7 @@
     </div>
     <canvas id="canvas">Sorry, HTML Canvas is not supported in your browser.</canvas>
     <canvas id="canvas2">Sorry, HTML Canvas is not supported in your browser.</canvas>
-    <script id="rendered-js">
+    <script id="digital-rain">
       var canvas = document.getElementById("canvas"),
       ctx = canvas.getContext("2d"),
       canvas2 = document.getElementById("canvas2"),

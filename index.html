@@ -1,0 +1,181 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://i.imgur.com/Jq58fGS.png">
+
+    <meta name="apple-mobile-web-app-title" content="Crypto Crackers">
+
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/uhrIr3E.png">
+
+
+  <title>Crypto Crackers</title>
+
+    <link rel="canonical" href="https://ctf.stomp.zone">
+  
+  
+  
+  
+<style>
+body {
+    margin: 0;
+    background-color: black;
+    filter: saturate(1.35);
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  min-height: fill;
+}
+
+div#center-content {
+    display: grid;
+    min-height: 100vh;
+}
+
+div.content-container {
+    place-self: center;
+    color: #e60000;
+    outline: 15px solid #000c;
+    border-radius: 2px;
+    background-color: #000e;
+    z-index: 1;
+    box-shadow: 0px 0px 2px 25px #260000dd;
+    cursor: context-menu;
+    transition: 400ms;
+}
+
+div h1.content {
+    place-self: center;
+    color: #e60000;
+    z-index: 2;
+    font-family: Orbitron;
+    text-shadow: 0 0 5px darkred;
+    font-size: 40px;
+}
+
+div > div:hover {
+  filter: brightness(1.7);
+}
+
+.orbitron-black {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+</head>
+
+<body translate="no">
+  <title>Crypto Crackers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
+  <div class="center-content" id="center-content">
+    <div class="content-container"><h1 class="content">Crypto Crackers</h1></div>
+  </div>
+  <canvas id="canvas">Sorry, HTML Canvas is not supported in your browser.</canvas>
+  <canvas id="canvas2">Sorry, HTML Canvas is not supported in your browser.</canvas>
+  
+      <script id="rendered-js">
+var canvas = document.getElementById("canvas"),
+ctx = canvas.getContext("2d"),
+canvas2 = document.getElementById("canvas2"),
+ctx2 = canvas2.getContext("2d"),
+cw = window.innerWidth,
+ch = window.innerHeight,
+possibleCharArr = ["ｴ", "⳩", "ь", "Ғ", "ҙ", "ԑ", "∂", "ⲕ", "Ѝ", "Ӈ", "и", "ж", "ℇ", "ｸ", "ӳ", "ӫ", "Ө", "Ё", "ﾏ", "ҩ", "ﾄ", "Ў", "ю", "ӷ", "Ъ", "Ї", "Ҍ", "ⲓ", "ｽ", "Ш", "ӿ", "Ӯ", "⳥", "ђ", "ﾎ", "Ҏ", "ﾛ", "Ѳ", "ｹ", "Җ", "ҿ", "Ⲃ", "Ҥ", "ﾗ", "ӽ", "Ӌ", "ｻ", "ｾ", "ｰ", "ｼ", "Ф", "∆", "Ӑ", "ｿ", "ⲝ", "ц", "й", "ﾈ", "Δ", "ѧ", "Д", "ӵ", "щ", "ҋ", "Ϥ", "Ⲍ", "ﾕ", "Ξ", "ӂ", "∁", "Ӕ", "ӭ", "Ћ", "Ӵ", "җ", "⳨", "ҵ", "ӯ", "ⲑ", "ⲡ", "ⲏ", "Ц", "в", "Λ", "ⳤ", "Ҕ", "ⳋ", "Ӥ", "ӈ", "ғ", "ﾅ", "т", "Ҳ", "Ӓ", "ϭ", "Є", "ﾆ", "Й", "ﾝ", "ѳ", "ⲩ", "ӓ", "ｱ", "ｮ", "Ӟ", "ӄ", "ѝ", "ﾂ", "ﾘ", "ґ", "Ѣ", "ﾍ", "ⲙ", "ӗ", "к", "м", "ӟ", "њ", "ｪ", "л", "ӕ", "я", "ѱ", "џ", "ﾀ", "ұ", "ф", "ⲧ", "Ӭ", "Ѐ", "Ⲋ", "љ", "Э", "Ҭ", "п", "Ѯ", "ё", "ѓ", "Ќ", "Щ", "⳦", "ﾖ", "Ӻ", "ｺ", "ѐ", "ⲃ", "қ", "ӛ", "д", "Ң", "Ӣ", "ｷ", "Џ", "ﾇ", "ⲁ", "ќ", "ⳉ", "ϥ", "Ԁ", "ў", "Г", "ﾙ", "Ⲅ", "ⲯ", "Γ", "ө", "Ӗ", "ӣ", "ҫ", "н", "ｵ", "ӑ", "Ӛ", "∀", "Ұ", "Қ", "ї", "Ԑ", "ћ", "ｭ", "Ӷ", "Ю", "ш", "Ӹ", "ҳ", "Ѓ", "Ы", "И", "ѣ", "ӊ", "ҷ", "Θ", "ҭ", "ﾁ", "ⲗ", "Ⳉ", "є", "ҏ", "ⲋ", "Ӂ", "Һ", "ﾚ", "ӥ", "Ӱ", "Ґ", "ԏ", "ﾃ", "Ж", "ԍ", "∓", "ⲉ", "ӧ", "ӱ", "ｲ", "ｩ", "Ӳ", "з", "ӌ", "ҹ", "∑", "ң", "ℏ", "ҡ", "ｫ", "Ҙ", "ｳ", "Ђ", "ﾊ", "ﾑ", "ҝ", "ы", "ԓ", "Л", "ﾒ", "э", "ｶ", "ｬ", "Љ", "ә", "Њ", "ⲭ", "П", "ｯ", "ﾋ", "ӆ", "ъ", "ҍ", "ҟ", "ﾐ", "ﾓ", "ӡ", "ϫ", "Б", "ч", "Ҫ", "Я", "ⲛ", "ⳁ", "ӹ", "ҕ", "Ә", "∏", "Ӄ", "Ӧ", "Ⲝ", "ӎ", "ﾉ", "Ч", "Π", "Ӫ", "ⲫ", "ⲍ", "ﾜ", "ﾌ", "ҥ", "ӝ", "Ӝ", "ﾔ"],
+charArr = [],
+maxCharCount = possibleCharArr.length,
+thickness = 0.33,
+fallingCharArr = [],
+fontSize = 14,
+maxColums = cw / fontSize;
+canvas.width = canvas2.width = cw;
+canvas.height = canvas2.height = ch;
+
+if (canvas.width < canvas.height) {
+  thickness = 3;
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+function repopulateChars() {
+  charArr = [];
+  var possibleChars = JSON.parse(JSON.stringify(possibleCharArr));
+  var numChars = maxCharCount;
+  while (numChars--) {
+    charArr.push(possibleChars.pop(randomInt(0, possibleChars.length - 1)));
+  }
+}
+charArr = possibleCharArr;
+
+function randomFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+Point.prototype.draw = function (ctx) {
+  this.value = charArr[randomInt(0, charArr.length - 1)].toUpperCase();
+  this.speed = randomFloat(1, 5) * (randomInt(85, 150) / randomInt(90, 110));
+
+  ctx2.fillStyle = "rgba(255,200,200,0.7)";
+  ctx2.font = fontSize + "px san-serif";
+  ctx2.fillText(this.value, this.x, this.y);
+
+  ctx.fillStyle = "#F00";
+  ctx.font = fontSize + "px san-serif";
+  ctx.fillText(this.value, this.x, this.y);
+
+  this.y += this.speed;
+  if (this.y > ch) {
+    this.y = randomFloat(-100, 0);
+    this.speed = randomFloat(1, 5) * (randomInt(85, 150) / randomInt(90, 110));
+  }
+};
+
+for (var i = 0; i / thickness < maxColums; i++) {
+  fallingCharArr.push(
+  new Point(
+  thickness >= 1 ? i * fontSize % (fontSize * maxColums) :
+  (randomInt(0, 2) == 1 ? 0 : fontSize) + (i == 0 ? 0 : i / thickness) * fontSize,
+  randomFloat(-1500, 0)));
+
+
+}
+
+var update = function () {
+  ctx.fillStyle = `rgba(0,0,0,${0.01 * randomInt(7, 10)})`;
+  ctx.fillRect(0, 0, cw, ch);
+
+  ctx2.clearRect(0, 0, cw, ch);
+
+  var i = fallingCharArr.length;
+
+  while (i--) {
+    fallingCharArr[i].draw(ctx);
+    var v = fallingCharArr[i];
+  }
+
+  requestAnimationFrame(update);
+};
+
+update();
+    </script>
+
+</body>
+</html>

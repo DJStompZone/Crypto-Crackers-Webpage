@@ -1,230 +1,292 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Crypto Crackers">
-    <meta property="og:title" content="Crypto Crackers">
-    <meta property="og:site_name" content="StompZone">
-    <meta property="og:url" content="https://ctf.stomp.zone">
-    <meta property="og:description" content="Crypto Crackers CTF team">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://i.imgur.com/XUecvdn.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Crypto Crackers">
-    <meta name="twitter:url" content="https://ctf.stomp.zone">
-    <meta name="twitter:description" content="Crypto Crackers CTF team">
-    <meta name="twitter:image" content="https://i.imgur.com/XUecvdn.png">
-    <link rel="apple-touch-icon" type="image/png" href="https://i.imgur.com/Jq58fGS.png">
-    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/uhrIr3E.png">
-    <link rel="icon" type="image/png" href="https://i.imgur.com/uhrIr3E.png">
-    <link rel="canonical" href="https://ctf.stomp.zone">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
-    <title>Crypto Crackers</title>
-    <style>
-      :root {
-        --vh: 1vh;
-        --vw: 1vw;
-      }
+<head id="b=n8VGtddtGV8n=b">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-title" content="Crypto Crackers">
+  <meta property="og:title" content="Crypto Crackers">
+  <meta property="og:site_name" content="StompZone">
+  <meta property="og:url" content="https://ctf.stomp.zone">
+  <meta property="og:description" content="Crypto Crackers CTF team">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.imgur.com/XUecvdn.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crypto Crackers">
+  <meta name="twitter:url" content="https://ctf.stomp.zone">
+  <meta name="twitter:description" content="Crypto Crackers CTF team">
+  <meta name="twitter:image" content="https://i.imgur.com/XUecvdn.png">
+  <link rel="apple-touch-icon" type="image/png" href="https://i.imgur.com/Jq58fGS.png" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/uhrIr3E.png" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="https://i.imgur.com/uhrIr3E.png" crossorigin="anonymous">
+  <link rel="canonical" href="https://ctf.stomp.zone">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
+  <meta name="seo-unique-id" id="numto" content="Crypto Crackers CTF team | https://ctf.stomp.zone"
+    property="definitely-not-a-red-herring"
+    value="WzY1Mzk2LDExNDk3LDExMDAsMTE3MCwxMTc3LDEyOTcsODcwNiwxMTQxMywxMDM3LDEyMjMsMTA4MCwxMDc4LDg0NTUsNjU0MDAsMTI2NywxMjU5LDEyNTYsMTAyNSw2NTQyMywxMTkzLDY1NDEyLDEwMzgsMTEwMiwxMjcxLDEwNjYsMTAzMSwxMTY0LDExNDExLDY1NDA1LDEwNjQsMTI3OSwxMjYyLDExNDkzLDExMDYsNjU0MjIsMTE2Niw2NTQzNSwxMTM4LDY1NDAxLDExNzQsMTIxNSwxMTM5NCwxMTg4LDY1NDMxLDEyNzcsMTIyNyw2NTQwMyw2NTQwNiw2NTM5Miw2NTQwNCwxMDYwLDg3MTAsMTIzMiw2NTQwNywxMTQyMSwxMDk0LDEwODEsNjU0MTYsOTE2LDExMjcsMTA0NCwxMjY5LDEwOTcsMTE2Myw5OTYsMTE0MDQsNjU0MjksOTI2LDEyMTgsODcwNSwxMjM2LDEyNjEsMTAzNSwxMjY4LDExNzUsMTE0OTYsMTIwNSwxMjYzLDExNDA5LDExNDI1LDExNDA3LDEwNjIsMTA3NCw5MjMsMTE0OTIsMTE3MiwxMTQ2NywxMjUyLDEyMjQsMTE3MSw2NTQxMywxMDkwLDEyMDIsMTIzNCwxMDA1LDEwMjgsNjU0MTQsMTA0OSw2NTQzNywxMTM5LDExNDMzLDEyMzUsNjUzOTMsNjUzOTAsMTI0NiwxMjIwLDExMTcsNjU0MTAsNjU0MzIsMTE2OSwxMTIyLDY1NDIxLDExNDE3LDEyMzksMTA4MiwxMDg0LDEyNDcsMTExNCw2NTM4NiwxMDgzLDEyMzcsMTEwMywxMTM3LDExMTksNjU0MDgsMTIwMSwxMDkyLDExNDMxLDEyNjAsMTAyNCwxMTQwMiwxMTEzLDEwNjksMTE5NiwxMDg3LDExMzQsMTEwNSwxMTA3LDEwMzYsMTA2NSwxMTQ5NCw2NTQzMCwxMjc0LDY1NDAyLDExMDQsMTEzOTUsMTE3OSwxMjQzLDEwNzYsMTE4NiwxMjUwLDY1Mzk5LDEwMzksNjU0MTUsMTEzOTMsMTExNiwxMTQ2NSw5OTcsMTI4MCwxMTE4LDEwNDMsNjU0MzMsMTEzOTYsMTE0MzksOTE1LDEyNTcsMTIzOCwxMjUxLDExOTUsMTA4NSw2NTM5NywxMjMzLDEyNDIsODcwNCwxMjAwLDExNzgsMTExMSwxMjk2LDExMTUsNjUzODksMTI3MCwxMDcwLDEwOTYsMTI3MiwxMjAzLDEwMjcsMTA2NywxMDQ4LDExMjMsMTIyNiwxMjA3LDkyMCwxMTk3LDY1NDA5LDExNDE1LDExNDY0LDExMDgsMTE2NywxMTQwMywxMjE3LDEyMTAsNjU0MzQsMTI1MywxMjY0LDExNjgsMTI5NSw2NTQxMSwxMDQ2LDEyOTMsODcyMywxMTQwMSwxMjU1LDEyNjUsNjUzOTQsNjUzODUsMTI2NiwxMDc5LDEyMjgsMTIwOSw4NzIxLDExODcsODQ2MywxMTg1LDY1Mzg3LDExNzYsNjUzOTUsMTAyNiw2NTQxOCw2NTQyNSwxMTgxLDEwOTksMTI5OSwxMDUxLDY1NDI2LDExMDEsNjUzOTgsNjUzODgsMTAzMywxMjQxLDEwMzQsMTE0MzcsMTA1NSw2NTM5MSw2NTQxOSwxMjIyLDEwOTgsMTE2NSwxMTgzLDY1NDI0LDY1NDI3LDEyNDksMTAwMywxMDQxLDEwOTUsMTE5NCwxMDcxLDExNDE5LDExNDU3LDEyNzMsMTE3MywxMjQwLDg3MTksMTIxOSwxMjU0LDExNDIwLDEyMzAsNjU0MTcsMTA2Myw5MjgsMTI1OCwxMTQzNSwxMTQwNSw2NTQzNiw2NTQyMCwxMTg5LDEyNDUsMTI0NCw2NTQyOF0=">
+  <title>Crypto Crackers</title>
+  <style>
+    :root {
+      --vh: 1vh;
+      --vw: 1vw;
+    }
 
-      body,
-      div.center-content,
-      div.content-container {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      }
+    body,
+    div.center-content,
+    div.content-container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
 
-      body {
-        min-height: calc(var(--vh, 1vh) * 100);
-        min-width: calc(var(--vw, 1vw) * 100);
-        margin: 0;
-        padding: 0;
-      }
+    body {
+      min-height: calc(var(--vh, 1vh) * 100);
+      min-width: calc(var(--vw, 1vw) * 100);
+      margin: 0;
+      padding: 0;
+    }
 
-      div.center-content {
-        min-width: calc(var(--vw, 1vw) *100);
-        margin: 0;
-        cursor: context-menu;
-      }
+    div.center-content {
+      min-width: calc(var(--vw, 1vw) *100);
+      margin: 0;
+      cursor: context-menu;
+    }
 
-      body {
-        background-color: black;
-        filter: saturate(1.35);
-        overflow: hidden;
-      }
+    body {
+      background-color: black;
+      filter: saturate(1.35);
+      overflow: hidden;
+    }
 
-      canvas {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.6;
-      }
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.6;
+    }
 
-      div.content-container {
-        color: #e60000;
-        outline: 15px solid #000c;
-        border-radius: 2px;
-        background-color: #000e;
-        z-index: 1;
-        box-shadow: 0px 0px 2px 25px #260000dd;
-        cursor: context-menu;
-        transition: 400ms;
-      }
+    div.content-container {
+      color: #e60000;
+      outline: 15px solid #000c;
+      border-radius: 2px;
+      background-color: #000e;
+      z-index: 1;
+      box-shadow: 0px 0px 2px 25px #260000dd;
+      cursor: context-menu;
+      transition: 400ms;
+    }
 
-      div>div h1.content {
-        color: #e60000;
-        z-index: 2;
-        font-family: "Orbitron", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 900;
-        font-style: normal;
-        text-shadow: 0 0 5px darkred;
-        cursor: context-menu;
-        font-size: 40px;
-      }
+    div>div h1.content {
+      color: #e60000;
+      z-index: 2;
+      font-family: "Orbitron", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+      text-shadow: 0 0 5px darkred;
+      cursor: context-menu;
+      font-size: 40px;
+    }
 
-      div>div:hover {
-        filter: brightness(1.7);
-      }
+    div>div:hover {
+      filter: brightness(1.7);
+    }
 
-      body,
-      div,
-      h1,
-      p,
-      canvas {
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        touch-action: manipulation;
-      }
+    body,
+    div,
+    h1,
+    p,
+    canvas {
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+  </style>
 
-    </style>
+  <script>
+    window.console = window.console || function (t) { };
 
-    <script>
-      window.console = window.console || function (t) {};
+  </script>
 
-    </script>
+</head>
 
-  </head>
-
-  <body translate="no">
-    <div class="center-content" id="center-content">
-      <div class="content-container">
-        <h1 class="content">Crypto Crackers</h1>
-      </div>
+<body translate="no">
+  <div class="center-content" id="center-content">
+    <div class="content-container">
+      <h1 class="content">Crypto Crackers</h1>
     </div>
-    <canvas id="canvas">Sorry, HTML Canvas is not supported in your browser.</canvas>
-    <canvas id="canvas2">Sorry, HTML Canvas is not supported in your browser.</canvas>
-    <script id="digital-rain">
-      var canvas = document.getElementById("canvas"),
-        canvas2 = document.getElementById("canvas2"),
-        ctx = canvas.getContext("2d"),
-        ctx2 = canvas2.getContext("2d"),
-        cw = window.innerWidth,
-        ch = window.innerHeight,
-        maxColumns = 0,
-        thickness = 1,
-        maxCharCount = 26,
-        fallingCharArr = [],
-        fontSize = 14,
-        charArr = ["ｴ", "⳩", "ь", "Ғ", "ҙ", "ԑ", "∂", "ⲕ", "Ѝ", "Ӈ", "и", "ж", "ℇ", "ｸ", "ӳ", "ӫ", "Ө", "Ё", "ﾏ", "ҩ", "ﾄ", "Ў", "ю", "ӷ", "Ъ", "Ї", "Ҍ", "ⲓ", "ｽ", "Ш", "ӿ", "Ӯ", "⳥", "ђ", "ﾎ", "Ҏ", "ﾛ", "Ѳ", "ｹ", "Җ", "ҿ", "Ⲃ", "Ҥ", "ﾗ", "ӽ", "Ӌ", "ｻ", "ｾ", "ｰ", "ｼ", "Ф", "∆", "Ӑ", "ｿ", "ⲝ", "ц", "й", "ﾈ", "Δ", "ѧ", "Д", "ӵ", "щ", "ҋ", "Ϥ", "Ⲍ", "ﾕ", "Ξ", "ӂ", "∁", "Ӕ", "ӭ", "Ћ", "Ӵ", "җ", "⳨", "ҵ", "ӯ", "ⲑ", "ⲡ", "ⲏ", "Ц", "в", "Λ", "ⳤ", "Ҕ", "ⳋ", "Ӥ", "ӈ", "ғ", "ﾅ", "т", "Ҳ", "Ӓ", "ϭ", "Є", "ﾆ", "Й", "ﾝ", "ѳ", "ⲩ", "ӓ", "ｱ", "ｮ", "Ӟ", "ӄ", "ѝ", "ﾂ", "ﾘ", "ґ", "Ѣ", "ﾍ", "ⲙ", "ӗ", "к", "м", "ӟ", "њ", "ｪ", "л", "ӕ", "я", "ѱ", "џ", "ﾀ", "ұ", "ф", "ⲧ", "Ӭ", "Ѐ", "Ⲋ", "љ", "Э", "Ҭ", "п", "Ѯ", "ё", "ѓ", "Ќ", "Щ", "⳦", "ﾖ", "Ӻ", "ｺ", "ѐ", "ⲃ", "қ", "ӛ", "д", "Ң", "Ӣ", "ｷ", "Џ", "ﾇ", "ⲁ", "ќ", "ⳉ", "ϥ", "Ԁ", "ў", "Г", "ﾙ", "Ⲅ", "ⲯ", "Γ", "ө", "Ӗ", "ӣ", "ҫ", "н", "ｵ", "ӑ", "Ӛ", "∀", "Ұ", "Қ", "ї", "Ԑ", "ћ", "ｭ", "Ӷ", "Ю", "ш", "Ӹ", "ҳ", "Ѓ", "Ы", "И", "ѣ", "ӊ", "ҷ", "Θ", "ҭ", "ﾁ", "ⲗ", "Ⳉ", "є", "ҏ", "ⲋ", "Ӂ", "Һ", "ﾚ", "ӥ", "Ӱ", "Ґ", "ԏ", "ﾃ", "Ж", "ԍ", "∓", "ⲉ", "ӧ", "ӱ", "ｲ", "ｩ", "Ӳ", "з", "ӌ", "ҹ", "∑", "ң", "ℏ", "ҡ", "ｫ", "Ҙ", "ｳ", "Ђ", "ﾊ", "ﾑ", "ҝ", "ы", "ԓ", "Л", "ﾒ", "э", "ｶ", "ｬ", "Љ", "ә", "Њ", "ⲭ", "П", "ｯ", "ﾋ", "ӆ", "ъ", "ҍ", "ҟ", "ﾐ", "ﾓ", "ӡ", "ϫ", "Б", "ч", "Ҫ", "Я", "ⲛ", "ⳁ", "ӹ", "ҕ", "Ә", "∏", "Ӄ", "Ӧ", "Ⲝ", "ӎ", "ﾉ", "Ч", "Π", "Ӫ", "ⲫ", "ⲍ", "ﾜ", "ﾌ", "ҥ", "ӝ", "Ӝ", "ﾔ"];
-      maxCharCount = charArr.length;
-      thickness = ((cw < ch) ? 3 : 1);
+  </div>
+  <canvas id="canvas">Sorry, HTML Canvas is not supported in your browser.</canvas>
+  <canvas id="canvas2">Sorry, HTML Canvas is not supported in your browser.</canvas>
+  <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"
+    viewBox="0 0 512 512" style="
+    position: absolute;
+    top: -12%;
+    scale: 0.75;
+    opacity: 0;
+">
+    <path fill="#000000"
+      d="M74.247 167.854C-90.602 374.671 219.872 342.307 219.872 342.307 138.961 289.214 74.247 167.854 74.247 167.854zm5.027 140.538c-8.384-13.955-4.365-37.814 11.23-68.749 3.447 4.516 7.256 9.333 11.335 14.406l19.178 62.17 7.346-31.115a561.216 561.216 0 0 0 50.158 49.33c-51.874 1.67-88.197-7.677-99.247-26.027zm358.494-140.538s-64.729 121.36-145.625 174.453c-.015 0 310.459 32.364 145.61-174.453zm-5.028 140.538c-11.049 18.38-47.372 27.713-99.246 26.072a561.276 561.276 0 0 0 50.158-49.33l7.33 31.085 19.179-62.215a733.836 733.836 0 0 0 11.335-14.406c15.595 30.995 19.66 54.84 11.23 68.809z"
+      style="
+    fill: darkred;
+    translate: 0 -20%;
+"></path>
+  </svg>
+  <script id="digital-rain">
+    let runeForge = function (element) { return 1 - (4 / 2 ** 3 ^ -8 << -(element - 3) ^ 1 * (-2 << 3)); };
+    var canvas = document.getElementById("canvas"),
+      canvas2 = document.getElementById("canvas2"),
+      ctx = canvas.getContext("2d"),
+      ctx2 = canvas2.getContext("2d"),
+      cw = window.innerWidth,
+      ch = window.innerHeight,
+      maxColumns = 0,
+      thickness = 1,
+      maxCharCount = 26,
+      fallingCharArr = [],
+      fontSize = 14,
+      globalHue = 0,
+      rune = runeForge(6),
+      charArr = JSON.parse(atob(document.getElementById(rune = atob(Array.from(document.querySelector(Array.from('7403').map(ea => { return eval(`${(typeof ea).toUpperCase()[0] + (typeof ea).substr(1)}.${'Code#Char#from'.split(String.fromCharCode(35)).reverse().join('')}(${97 + parseInt(ea)})`); }).join('')).getAttribute('id')).map(ea => { rune--; return ea[parseInt((2 * rune) % 2 ** 2)]; }).filter(ea => ea != undefined).join(''))).getAttribute('value'))).map(ea => { return String.fromCodePoint(ea); });
+    maxCharCount = charArr.length;
+    thickness = ((cw < ch) ? 3 : 1);
+    maxColumns = cw / fontSize;
+    for (var i = 0;
+      (i === 0 ? 0 : i) / thickness < maxColumns; i++)
+    {
+      fallingCharArr.push(new Point(
+        (thickness >= 1) ? (i * fontSize % (fontSize * maxColumns)) : (randomInt(0, 2) == 1 ? 0 : fontSize) + (i == 0 ? 0 : (i / thickness) * fontSize), randomFloat(-1500, 0)));
+    }
+
+    function initCanvas()
+    {
+      cw = window.innerWidth;
+      ch = window.innerHeight;
+      canvas.width = canvas2.width = cw;
+      canvas.height = canvas2.height = ch;
+      fallingCharArr = [];
       maxColumns = cw / fontSize;
       for (var i = 0;
-        (i === 0 ? 0 : i) / thickness < maxColumns; i++) {
+        (i === 0 ? 0 : i) / thickness < maxColumns; i++)
+      {
         fallingCharArr.push(new Point(
           (thickness >= 1) ? (i * fontSize % (fontSize * maxColumns)) : (randomInt(0, 2) == 1 ? 0 : fontSize) + (i == 0 ? 0 : (i / thickness) * fontSize), randomFloat(-1500, 0)));
       }
+      update();
+    }
 
-      function initCanvas() {
-        cw = window.innerWidth;
-        ch = window.innerHeight;
-        canvas.width = canvas2.width = cw;
-        canvas.height = canvas2.height = ch;
-        fallingCharArr = [];
-        maxColumns = cw / fontSize;
-        for (var i = 0;
-          (i === 0 ? 0 : i) / thickness < maxColumns; i++) {
-          fallingCharArr.push(new Point(
-            (thickness >= 1) ? (i * fontSize % (fontSize * maxColumns)) : (randomInt(0, 2) == 1 ? 0 : fontSize) + (i == 0 ? 0 : (i / thickness) * fontSize), randomFloat(-1500, 0)));
-        }
-        update();
-      }
+    function randomInt(min, max)
+    {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
 
-      function randomInt(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
-      }
+    function randomFloat(min, max)
+    {
+      return Math.random() * (max - min) + min;
+    }
 
-      function randomFloat(min, max) {
-        return Math.random() * (max - min) + min;
-      }
+    function Point(x, y)
+    {
+      this.x = x;
+      this.y = y;
+    }
+    Point.prototype.draw = function (ctx)
+    {
+      this.value = charArr[randomInt(0, charArr.length - 1)].toUpperCase();
+      this.speed = randomFloat(1, 5) * (randomInt(85, 150) / randomInt(90, 110));
+      ctx2.fillStyle = `hsla(${globalHue}, 80%, 70%, 0.7)`;
 
-      function Point(x, y) {
-        this.x = x;
-        this.y = y;
-      }
-      Point.prototype.draw = function (ctx) {
-        this.value = charArr[randomInt(0, charArr.length - 1)].toUpperCase();
+      ctx2.font = fontSize + "px san-serif";
+      ctx2.fillText(this.value, this.x, this.y);
+      ctx.fillStyle = `hsla(${globalHue}, 100%, 50%, 1)`;
+      ctx.font = fontSize + "px san-serif";
+      ctx.fillText(this.value, this.x, this.y);
+      this.y += this.speed;
+      if (this.y > ch)
+      {
+        this.y = randomFloat(-100, 0);
         this.speed = randomFloat(1, 5) * (randomInt(85, 150) / randomInt(90, 110));
-        ctx2.fillStyle = "rgba(255,200,200,0.7)";
-        ctx2.font = fontSize + "px san-serif";
-        ctx2.fillText(this.value, this.x, this.y);
-        ctx.fillStyle = "#F00";
-        ctx.font = fontSize + "px san-serif";
-        ctx.fillText(this.value, this.x, this.y);
-        this.y += this.speed;
-        if (this.y > ch) {
-          this.y = randomFloat(-100, 0);
-          this.speed = randomFloat(1, 5) * (randomInt(85, 150) / randomInt(90, 110));
-        }
-      };
-
-      function update() {
-        ctx.fillStyle = `rgba(0,0,0,${0.01 * randomInt(7, 10)})`;
-        ctx.fillRect(0, 0, cw, ch);
-        ctx2.clearRect(0, 0, cw, ch);
-        var i = fallingCharArr.length;
-        while (i--) {
-          fallingCharArr[i].draw(ctx);
-          var v = fallingCharArr[i];
-        }
-        requestAnimationFrame(update);
-      };
-      window.addEventListener('load', initCanvas);
-      window.addEventListener('resize', initCanvas);
-
-    </script>
-
-    <script>
-      function updateVH() {
-        var vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        var vw = window.innerWidth * 0.01;
-        document.documentElement.style.setProperty('--vw', `${vw}px`);
       }
-      window.addEventListener('load', updateVH);
-      window.addEventListener('resize', updateVH);
-      document.addEventListener('touchmove', event => event.scale !== 1 && event.preventDefault(), {
-        passive: false
-      });
-      document.addEventListener('contextmenu', event => event.preventDefault());
+    };
 
-    </script>
+    function update()
+    {
+      ctx.fillStyle = `hsla(0, 0%, 0%, ${0.01 * randomInt(7, 10)})`;
 
-  </body>
+      ctx.fillRect(0, 0, cw, ch);
+      ctx2.clearRect(0, 0, cw, ch);
+      var i = fallingCharArr.length;
+      while (i--)
+      {
+        fallingCharArr[i].draw(ctx);
+        var v = fallingCharArr[i];
+      }
+      requestAnimationFrame(update);
+    };
+
+    window.addEventListener('load', initCanvas);
+    window.addEventListener('resize', initCanvas);
+
+    let hueStep = 1;
+    let hueReturnTimeout = null;
+    let hueCooldownTime = 50;
+
+    function updateEasterEgg()
+    {
+      document.getElementsByTagName("svg")[0].style.opacity = globalHue / 180;
+    }
+    
+    function updateHue()
+    {
+      globalHue += hueStep;
+      if (globalHue > 360) hue = parseInt(globalHue - 360);
+      updateEasterEgg();
+      clearTimeout(hueReturnTimeout);
+      hueReturnTimeout = setTimeout(returnHueToNormal, hueCooldownTime);
+    }
+
+    function returnHueToNormal()
+    {
+      if (globalHue > 0)
+      {
+        globalHue -= hueStep;
+        updateEasterEgg();
+        hueReturnTimeout = setTimeout(returnHueToNormal, hueCooldownTime);
+      }
+    }
+
+    document.addEventListener('click', e => { updateHue(); })
+  </script>
+
+  <script>
+    function updateVH()
+    {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      var vw = window.innerWidth * 0.01;
+      document.documentElement.style.setProperty('--vw', `${vw}px`);
+    }
+    window.addEventListener('load', updateVH);
+    window.addEventListener('resize', updateVH);
+    document.addEventListener('touchmove', event => event.scale !== 1 && event.preventDefault(), {
+      passive: false
+    });
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+  </script>
+
+</body>
 
 </html>
